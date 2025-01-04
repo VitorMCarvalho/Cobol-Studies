@@ -1,0 +1,42 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PROJETO-PROMOCAO-EMPRESA.
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+           77 WS-NOME PIC X(20).
+           77 WS-ANO PIC 9(3).
+           77 WS-ANO-FORMAT PIC Z(2)9.
+           77 WS-SALARIO PIC 9(6).
+           77 WS-RESULTADO PIC $Z(5)9,99.
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+           DISPLAY "DIGITE O NOME".
+           ACCEPT WS-NOME.
+           DISPLAY "DIGITE O ANO".
+           ACCEPT WS-ANO.
+           DISPLAY "DIGITE O SALARIO ATUAL".
+           ACCEPT WS-SALARIO.
+           IF WS-ANO >= 0 THEN
+               EVALUATE WS-ANO
+                   WHEN 0 THRU 1
+                       MOVE WS-SALARIO TO WS-RESULTADO
+                   WHEN 2 THRU 5
+                       COMPUTE WS-RESULTADO = WS-SALARIO * 1,05
+                   WHEN 6 THRU 15
+                       COMPUTE WS-RESULTADO = WS-SALARIO * 1,1
+                   WHEN OTHER
+                       COMPUTE WS-RESULTADO = WS-SALARIO * 1,15
+               END-EVALUATE
+
+               MOVE WS-ANO TO WS-ANO-FORMAT
+               DISPLAY "O FUNCIONARIO " FUNCTION TRIM(WS-NOME) " ESTA "
+     -     "NA EMPRESA HA " WS-ANO-FORMAT " ANOS E MERECE UM SALARIO "
+     -      "DE " WS-RESULTADO
+           ELSE
+               DISPLAY "O FUNCIONARIO PRECISA TRABALHAR NA EMPRESA A "
+     -     "MAIS DE 0 ANOS"
+            END-IF.
+       END PROGRAM PROJETO-PROMOCAO-EMPRESA.
