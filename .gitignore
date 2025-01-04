@@ -1,0 +1,27 @@
+# Ignorar arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar logs e arquivos temporários
+*.log
+*.tmp
+
+# Ignorar dependências de linguagens
+node_modules/   # Para projetos Node.js
+venv/           # Para ambientes virtuais Python
+
+# Ignorar arquivos de compilação
+build/
+dist/
+*.class         # Arquivos Java compilados
+
+# Ignorar configurações locais do IDE
+.idea/          # IntelliJ, PyCharm
+*.swp           # Arquivos temporários do Vim
+.vscode/        # Configurações do Visual Studio Code
+
+# Ignorar credenciais
+.env            # Arquivos de variáveis de ambiente
+
+#ignorando os binarios do openidecobol
+/bin/
