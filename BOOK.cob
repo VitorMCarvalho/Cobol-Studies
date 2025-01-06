@@ -1,0 +1,3 @@
+           77 WS-VENDAS PIC 9(6)V99 VALUES ZEROS.
+           77 WS-QTD PIC 9(3) VALUE 1.
+           77 WS-ACUM PIC 9(3)V99 VALUES ZEROS.
